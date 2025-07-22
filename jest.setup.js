@@ -13,9 +13,13 @@ Object.defineProperty(window, "localStorage", {
   writable: true,
 })
 
+
 global.fetch = jest.fn()
 
-jest.beforeEach(() => {
+
+const beforeEach = () => {
   jest.clearAllMocks()
   localStorageMock.getItem.mockReturnValue(null)
-})
+}
+
+beforeEach()
